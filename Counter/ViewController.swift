@@ -9,15 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet private weak var countLabel: UILabel!
     
-    @IBOutlet weak var incrementButton: UIButton!
+    @IBOutlet private weak var incrementButton: UIButton!
     
-    @IBOutlet weak var decrementButton: UIButton!
+    @IBOutlet private weak var decrementButton: UIButton!
     
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet private weak var resetButton: UIButton!
     
-    @IBOutlet weak var counterLog: UITextView!
+    @IBOutlet private weak var counterLog: UITextView!
     
     // счетчик, который будем увеличивать
     private var count: Int = 0 {
@@ -36,12 +36,12 @@ class ViewController: UIViewController {
         setupView()
     }
     
-    @IBAction func increment(_ sender: Any) {
+    @IBAction private func increment(_ sender: Any) {
         count += 1
         counterLog.text.append("\(dateFormatter): значение изменено на +1. \n")
     }
     
-    @IBAction func decrement(_ sender: Any) {
+    @IBAction private func decrement(_ sender: Any) {
         if count <= 0 {
             count = 0
             counterLog.text.append("\(dateFormatter): попытка уменьшить значение счётчика ниже 0. \n")
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func reset(_ sender: Any) {
+    @IBAction private func reset(_ sender: Any) {
         count = 0
         counterLog.text.append("\(dateFormatter): значение сброшено. \n")
     }
