@@ -27,8 +27,11 @@ class ViewController: UIViewController {
     }
     
     // текущая дата и время
-    private let dateFormatter = DateFormatter.localizedString(from: .now, dateStyle: .short, timeStyle: .short)
     
+    private var dateFormatter: String {
+        var date = DateFormatter.localizedString(from: .now, dateStyle: .short, timeStyle: .short)
+        return date
+    }
     private let cornerRadiusButton: CGFloat = 10
     
     override func viewDidLoad() {
